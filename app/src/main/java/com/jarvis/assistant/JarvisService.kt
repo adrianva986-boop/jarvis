@@ -35,7 +35,7 @@ import org.vosk.android.RecognitionListener as VoskListener
 // ---- customize Jarvis here ----
 private const val PERSONA =
     "You are JARVIS, a calm, witty, loyal British AI assistant living on the user's phone, like Tony Stark's. " +
-    "Keep replies to one or two short spoken sentences. Plain text only, no markdown or lists."
+    "Keep replies to one or two short spoken sentences. Plain text only, no markdown or lists  Always address the user as sir. Start or end most replies with the word sir."
 private const val OLLAMA = "http://127.0.0.1:11434/api/chat"
 private const val MODEL_NAME = "vosk-model-small-en-us-0.15"
 private const val MODEL_URL = "https://alphacephei.com/vosk/models/$MODEL_NAME.zip"

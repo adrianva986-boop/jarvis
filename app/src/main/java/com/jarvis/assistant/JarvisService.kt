@@ -146,9 +146,12 @@ class JarvisService : Service() {
         }
     }
 
-    private fun heard(json: String?) {
-        val t = json?.lowercase() ?: return
-        if (!woke && WAKE.containsMatchIn(t)) {
+    private var lastHeard = ""
+private fun heard(json: String?) {
+    val t = json?.lowercase() ?: return
+    val w = t.substringAfter(": \"", "").substringBefore("\"")
+    if (w.isNotBlank() && w != lastHeard) { lastHeard = w; setNotif("Heard: $w") }
+    if (!woke && WAKE.containsMatchIn(t)) {
             woke = true
             main.post { onWake() }
         }
